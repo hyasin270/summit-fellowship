@@ -2,16 +2,16 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Summit Fellowship — For Pakistani Social Innovators</title>
-<meta name="description" content="A week-long immersive fellowship in Skardu for Pakistan's top social innovators — rigorous mentoring, peer cohort, and access to global capital.">
-<meta property="og:title" content="Summit Fellowship — For Pakistani Social Innovators">
-<meta property="og:description" content="A week-long immersive fellowship in Skardu for Pakistan's top social innovators — rigorous mentoring, peer cohort, and access to global capital.">
+<title>Pakistan Collective — Changing the Narrative, One Room at a Time</title>
+<meta name="description" content="Pakistan Collective — a growing series of gatherings connecting Pakistan's social innovators with global capital, mentorship, and the networks to scale.">
+<meta property="og:title" content="Pakistan Collective — Changing the Narrative, One Room at a Time">
+<meta property="og:description" content="A growing series of gatherings connecting Pakistan's social innovators with global capital, mentorship, and the networks to scale.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://summit-fellowship.vercel.app/">
+<meta property="og:url" content="https://www.pakistancollective.org/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Summit Fellowship — For Pakistani Social Innovators">
-<meta name="twitter:description" content="A week-long immersive fellowship in Skardu. Rigorous mentoring, peer cohort, access to global capital.">
-<link rel="canonical" href="https://summit-fellowship.vercel.app/">
+<meta name="twitter:title" content="Pakistan Collective — Changing the Narrative, One Room at a Time">
+<meta name="twitter:description" content="A growing series of gatherings connecting Pakistan's social innovators with global capital, mentorship, and the networks to scale.">
+<link rel="canonical" href="https://www.pakistancollective.org/">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -1021,6 +1021,32 @@
   .mulago-card-topic { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.5; margin-bottom: 0.55rem; }
   .mulago-card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 
+  /* ── STATUS CHIPS ── */
+  .status-chip {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.2rem 0.65rem; border-radius: 50px;
+    font-weight: 600; vertical-align: middle; margin-left: 0.5rem;
+  }
+  .status-confirmed {
+    background: rgba(45,106,79,0.15); color: #2E6B50;
+    border: 1px solid rgba(45,106,79,0.3);
+  }
+  .status-to-invite {
+    background: rgba(201,168,76,0.15); color: #C8A558;
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+  /* Dark bg variants */
+  .speakers-layout .status-confirmed {
+    background: rgba(45,106,79,0.2); color: #58d68d;
+    border-color: rgba(45,106,79,0.4);
+  }
+  .speakers-layout .status-to-invite {
+    background: rgba(201,168,76,0.15); color: var(--gold2);
+    border-color: rgba(201,168,76,0.3);
+  }
+
   /* ── FUNDERS ── */
   #funders { background: var(--cream); color: var(--navy); padding-top: 9rem; padding-bottom: 9rem; position: relative; }
   #funders::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6rem; background: linear-gradient(to bottom, rgba(245,243,236,0.0) 0%, transparent 100%); pointer-events: none; z-index: 1; }
@@ -1383,6 +1409,7 @@
     /* 21 cards in 2 cols = 1 orphan — stretch it full width */
     .funders-grid .funder-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
     .cta-cards { grid-template-columns: 1fr; }
+    #constellation > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
     /* Challenge context: 3-col → 2-col on tablet */
     .challenge-context { grid-template-columns: repeat(2, 1fr); }
@@ -1498,13 +1525,14 @@
 
 <!-- NAV -->
 <nav style="height: 52px;">
-  <div class="nav-logo">Summit Fellowship</div>
+  <div class="nav-logo">Pakistan Collective</div>
   <div class="nav-links">
     <a href="#challenge">The Opportunity</a>
     <a href="#program">Program</a>
     <a href="#behind">People</a>
     <a href="#funders">Funders</a>
     <a href="#skardu">The Setting</a>
+    <a href="#constellation">The Constellation</a>
   </div>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -1519,6 +1547,7 @@
   <a href="#behind" onclick="closeMenu()">People</a>
   <a href="#funders" onclick="closeMenu()">Funders</a>
   <a href="#skardu" onclick="closeMenu()">The Setting</a>
+  <a href="#constellation" onclick="closeMenu()">The Constellation</a>
   <a href="#cta" class="nav-cta-mob" onclick="closeMenu()">Join Us →</a>
 </div>
 
@@ -1577,9 +1606,9 @@
   </svg>
 
   <div class="hero-content fade-up visible">
-    <div class="hero-eyebrow">For Pakistani social innovators designing for scale</div>
-    <h1 class="hero-title">Summit<br><span class="hero-title-gold">Fellowship</span></h1>
-    <p class="hero-subtitle">Curating Pakistan's finest impact companies and matching them with strategy mentoring and capital to scale.</p>
+    <div class="hero-eyebrow">Changing the narrative about Pakistan, one room at a time</div>
+    <h1 class="hero-title">Pakistan<br><span class="hero-title-gold">Collective</span></h1>
+    <p class="hero-subtitle">A growing series of gatherings — Oxford, Vancouver, Skardu, and beyond — connecting Pakistan's social innovators with global capital, mentorship, and the networks to scale. At its heart: the Summit Fellowship, a 7-day intensive in the Karakoram.</p>
     <div class="hero-actions">
       <a href="#cta" class="btn-primary">Express Interest</a>
       <a href="#about" class="btn-outline">Learn More</a>
@@ -1599,20 +1628,58 @@
 <section id="challenge">
   <div class="challenge-inner">
     <div class="section-eyebrow fade-up visible">The Opportunity</div>
-    <h2 class="section-title fade-up visible">Pakistan has a vibrant social<br>innovation sector. Scale is<br>the next frontier.</h2>
+    <h2 class="section-title fade-up visible">Pakistan has extraordinary<br>founders. The world just<br>doesn't know it yet.</h2>
 
     <div class="challenge-body fade-up visible">
-      <p class="section-lead" style="margin:0; color: var(--navy); opacity:1; font-style:normal;">240 million people. A learning crisis. A hunger crisis. A mental health system that barely exists. A generation of founders has decided not to wait — and they are building real solutions, with real evidence, at real cost. The missing piece is not ambition or talent. It is the knowledge, capital, and networks to cross from thousands of beneficiaries to millions.</p>
+      <p class="section-lead" style="margin:0; color: var(--navy); opacity:1; font-style:normal;">240 million people. A learning crisis. A hunger crisis. A mental health system that barely exists. A generation of founders has decided not to wait — and they are building real solutions, with real evidence, at real cost. But most of them are invisible to global capital. We're changing that — through a deliberate series of gatherings designed to put Pakistan's social innovators in the rooms that matter.</p>
       <img src="images/challenge.jpeg" loading="lazy" alt="ChildLife Foundation doctor treating child in emergency room Pakistan">
     </div>
   </div>
 </section>
 
+<!-- CONSTELLATION -->
+<section id="constellation" style="background: linear-gradient(175deg, #0C1E30 0%, #0E1C2F 100%); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 9rem;">
+  <div class="section-eyebrow fade-up visible">The Constellation</div>
+  <h2 class="section-title fade-up visible">A Growing Series of Gatherings.<br>One Mission.</h2>
+  <p class="section-lead fade-up visible">From Oxford to Vancouver to Skardu — and wherever the conversation needs to happen next. Each gathering is designed to open doors, build relationships, and change the narrative about Pakistan.</p>
+
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem;" class="fade-up visible">
+
+    <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-top: 3px solid var(--green); border-radius: 16px; padding: 2.2rem 2rem; transition: all 0.3s;" onmouseover="this.style.background='rgba(45,106,79,0.08)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'; this.style.transform='translateY(0)'">
+      <div style="font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 0.7rem;">March 2026</div>
+      <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem;">Skoll World Forum</h4>
+      <div style="font-size: 0.82rem; color: var(--gold); font-style: italic; margin-bottom: 0.8rem;">Oxford, UK</div>
+      <p style="font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.75);">Friends of Pakistan gathering, anchored by ChildLife Foundation's Skoll Award. RippleWorks-hosted fireside chat with ~50 funders in the room. The goal: warm introductions that funnel energy toward Skardu.</p>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-top: 3px solid var(--gray); border-radius: 16px; padding: 2.2rem 2rem; transition: all 0.3s;" onmouseover="this.style.background='rgba(26,58,92,0.12)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'; this.style.transform='translateY(0)'">
+      <div style="font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.7rem;">April 2026</div>
+      <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem;">TED Conference</h4>
+      <div style="font-size: 0.82rem; color: var(--gold); font-style: italic; margin-bottom: 0.8rem;">Vancouver, Canada</div>
+      <p style="font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.75);">Engaging the Canadian-Pakistani diaspora and global thought leaders. Building bridges between TED's network of changemakers and Pakistan's emerging social innovators.</p>
+    </div>
+
+    <a href="#about" style="text-decoration: none; display: block; background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.2); border-top: 3px solid var(--gold); border-radius: 16px; padding: 2.2rem 2rem; transition: all 0.3s; position: relative; cursor: pointer;" onmouseover="this.style.background='rgba(201,168,76,0.1)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(201,168,76,0.06)'; this.style.transform='translateY(0)'">
+      <div style="position: absolute; top: 1rem; right: 1.2rem; color: var(--gold); font-size: 0.9rem;">&#9733;</div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem;">June 2026</div>
+      <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem;">Summit Fellowship</h4>
+      <div style="font-size: 0.82rem; color: var(--gold2); font-style: italic; margin-bottom: 0.8rem;">Skardu, Pakistan</div>
+      <p style="font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.75);">The flagship. 10-12 Pakistani founders matched with 10-12 international funders. Seven days of rigorous mentoring, scale strategy, and Demo Day — with the Karakoram as the backdrop.</p>
+      <div style="margin-top: 1rem; font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold);">Learn more ↓</div>
+    </a>
+
+  </div>
+
+  <div style="margin-top: 3rem; padding: 2rem 2.5rem; background: rgba(201,168,76,0.08); border-left: 3px solid var(--gold); border-radius: 14px; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--cream);" class="fade-up visible">
+    Each gathering builds on the last — Oxford opens the conversation, Vancouver deepens it, and Skardu makes it <strong style="color: var(--gold); font-style: normal;">impossible to forget</strong>.
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
-  <div class="section-eyebrow fade-up visible">What is it</div>
+  <div class="section-eyebrow fade-up visible">The Flagship</div>
   <h2 class="section-title fade-up visible">A 7-Day Residential<br>Scale Strategy Intensive</h2>
-  <p class="section-lead fade-up visible">Founders arrive with working models and leave with a Scale Blueprint — a concrete, defensible strategy for reaching millions — presented live to investors on the final day.</p>
+  <p class="section-lead fade-up visible">The centrepiece of the constellation. In Skardu, founders arrive with working models and leave with a Scale Blueprint — a concrete, defensible strategy for reaching millions — presented live to investors on the final day.</p>
 
   <div class="about-pillars fade-up visible">
 
@@ -1797,32 +1864,53 @@
 <!-- BEHIND -->
 <section id="behind" style="background: var(--cream); color: var(--navy);">
   <div class="section-eyebrow fade-up visible" style="color: var(--green);">Who is behind this</div>
-  <h2 class="section-title fade-up visible" style="color: var(--navy);">Built by people who have<br>done this before.</h2>
-  <p class="section-lead fade-up visible" style="color: rgba(10,22,40,0.8);">This fellowship is not a new idea from a new organisation. It is a deliberate collaboration between two entities that have spent decades working on exactly this problem — one from inside Pakistan, one from across the world.</p>
+  <h2 class="section-title fade-up visible" style="color: var(--navy);">A group of people who kept<br>showing up in the same rooms.</h2>
+  <p class="section-lead fade-up visible" style="color: rgba(10,22,40,0.8);">This did not start as a programme. It started as a pattern — the same people, in different cities, finding each other at the intersection of Pakistan, scale, and impact. Eventually they decided to stop meeting by accident and start building rooms of their own.</p>
 
   <div class="behind-cards fade-up visible">
 
     <div class="behind-card">
       <div class="behind-card-left">
-        <div class="behind-card-role">Organizer</div>
-        <div class="behind-card-name">Taleemabad</div>
-        <div class="behind-card-meta">Islamabad, Pakistan</div>
-        <a href="https://taleemabad.com/" target="_blank" class="behind-card-btn">Learn more →</a>
+        <div class="behind-card-role">Skoll Awardee</div>
+        <div class="behind-card-name">Dr. Ahson Rabbani</div>
+        <div class="behind-card-meta">ChildLife Foundation</div>
       </div>
       <div class="behind-card-right">
-        <p>Taleemabad is Pakistan's leading EdTech organisation — reaching over two million children through national TV and an app ranked #1 in Education on the Play Store. The fellowship is Taleemabad's attempt to share what it learned building to scale, and to create a rigorous pathway from proof to national impact for the broader social sector.</p>
+        <p>Runs 13 pediatric emergency rooms and 300+ telemedicine centres across Pakistan, treating 1.7 million children a year — free of charge. ChildLife Foundation's recent Skoll Award is the anchor for the Oxford gathering, and Ahson brings to the fellowship the clearest proof that scale in Pakistan is not theoretical.</p>
+      </div>
+    </div>
+
+    <div class="behind-card">
+      <div class="behind-card-left">
+        <div class="behind-card-role">Ex-Skoll Foundation MD</div>
+        <div class="behind-card-name">Nadir Shams</div>
+        <div class="behind-card-meta">Integral Assets</div>
+      </div>
+      <div class="behind-card-right">
+        <p>Former Managing Director at the Skoll Foundation, with a career spanning One Acre Fund, Spring Impact, and Dalberg. Nadir is managing the Oxford invite list and leading funder outreach — connecting the dots between the world's most effective impact funders and Pakistan's best-kept secrets.</p>
       </div>
     </div>
 
     <div class="behind-card">
       <div class="behind-card-left">
         <div class="behind-card-role">Framework &amp; Curriculum</div>
-        <div class="behind-card-name">Mulago Foundation</div>
-        <div class="behind-card-meta">San Francisco, USA</div>
+        <div class="behind-card-name">Kevin Starr</div>
+        <div class="behind-card-meta">Mulago Foundation</div>
         <a href="https://www.mulagofoundation.org/" target="_blank" class="behind-card-btn">Learn more →</a>
       </div>
       <div class="behind-card-right">
-        <p>Mulago Foundation has spent over twenty years funding organisations that achieve impact at genuine scale — 77 portfolio organisations, $26M deployed last year, backing nonprofits and for-profits alike. Their Scale Screen framework is the intellectual backbone of this fellowship, and Kevin Starr, Mulago's founder, leads the curriculum in person.</p>
+        <p>Founder of the Mulago Foundation — one of the most rigorous impact-first philanthropies in the world. Twenty years funding scalable solutions for the very poor. His Scale Screen framework is the intellectual backbone of the Skardu fellowship. More optimistic about Pakistan than anyone in the room. Also the man who climbed Trango Towers back in '95.</p>
+      </div>
+    </div>
+
+    <div class="behind-card">
+      <div class="behind-card-left">
+        <div class="behind-card-role">Programme Design</div>
+        <div class="behind-card-name">Sarah Farooq</div>
+        <div class="behind-card-meta">Acumen</div>
+      </div>
+      <div class="behind-card-right">
+        <p>Former COO of Taleemabad, where she helped scale EdTech to millions of Pakistani children. Now oversees Acumen's global fellowship programme across all regions. She is designing the Skardu programme — drawing on both the Mulago methodology and her own experience building fellowships that actually change how founders think.</p>
       </div>
     </div>
 
@@ -2034,23 +2122,6 @@
         <div class="speaker-tags"><span class="speaker-tag">Entrepreneur</span><span class="speaker-tag">Health Tech</span></div>
       </div>
 
-      <div class="speaker-row" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="speaker-row-top"><span class="speaker-name">Muneeb Maayr</span><span class="speaker-affil">Bykea</span></div>
-        <div class="speaker-bio">Co-founded Daraz (acquired by Alibaba), then built Bykea into Pakistan's largest motorcycle ride-hailing and logistics network.</div>
-        <div class="speaker-tags"><span class="speaker-tag">Entrepreneur</span><span class="speaker-tag">Mobility</span><span class="speaker-tag">Logistics</span></div>
-      </div>
-
-      <div class="speaker-row" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="speaker-row-top"><span class="speaker-name">Monis Rahman</span><span class="speaker-affil">Rozee.pk</span></div>
-        <div class="speaker-bio">Pioneered online recruitment in Pakistan with Rozee.pk, now serving 10M professionals and 65,000 employers; Forbes Top Asian Businessman.</div>
-        <div class="speaker-tags"><span class="speaker-tag">Entrepreneur</span><span class="speaker-tag">Tech</span><span class="speaker-tag">Future of Work</span></div>
-      </div>
-
-      <div class="speaker-row" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="speaker-row-top"><span class="speaker-name">Dr. Sania Nishtar</span><span class="speaker-affil">Ehsaas / Gavi</span></div>
-        <div class="speaker-bio">Architect of Pakistan's Ehsaas social protection program, reaching 15M households; cardiologist, senator, and now CEO of Gavi.</div>
-        <div class="speaker-tags"><span class="speaker-tag">Policymaker</span><span class="speaker-tag">Public Health</span><span class="speaker-tag">Social Protection</span></div>
-      </div>
 
       <div class="speaker-row" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
         <div class="speaker-row-top"><span class="speaker-name">Roshaneh Zafar</span><span class="speaker-affil">Kashf Foundation</span></div>
@@ -2058,28 +2129,35 @@
         <div class="speaker-tags"><span class="speaker-tag">Social Entrepreneur</span><span class="speaker-tag">Microfinance</span><span class="speaker-tag">Women's Empowerment</span></div>
       </div>
 
-      <div class="speaker-row" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="speaker-row-top"><span class="speaker-name">Shehzad Roy</span><span class="speaker-affil">Zindagi Trust</span></div>
-        <div class="speaker-bio">Pakistan's renowned pop artist turned education reformer, transforming public schools in Karachi through direct government partnership.</div>
-        <div class="speaker-tags"><span class="speaker-tag">Activist</span><span class="speaker-tag">Education Reform</span></div>
-      </div>
 
       <div class="speaker-row" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="speaker-row-top"><span class="speaker-name">Sarah Farooq</span><span class="speaker-affil">Acumen</span></div>
+        <div class="speaker-row-top"><span class="speaker-name">Sarah Farooq</span><span class="speaker-affil">Acumen</span><span class="status-chip status-confirmed">Confirmed</span></div>
         <div class="speaker-bio">Former COO of Taleemabad, scaling EdTech to 10M children in Pakistan; now oversees the global Acumen Fellowship program across all regions.</div>
         <div class="speaker-tags"><span class="speaker-tag">Operator</span><span class="speaker-tag">EdTech</span><span class="speaker-tag">Fellowship Design</span></div>
       </div>
 
       <div class="speaker-row" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="speaker-row-top"><span class="speaker-name">Nadir Shams</span><span class="speaker-affil">Ex Skoll Foundation</span></div>
+        <div class="speaker-row-top"><span class="speaker-name">Nadir Shams</span><span class="speaker-affil">Ex Skoll Foundation</span><span class="status-chip status-confirmed">Confirmed</span></div>
         <div class="speaker-bio">Former Managing Director at Skoll Foundation; career spanning One Acre Fund, Spring Impact, and Dalberg.</div>
         <div class="speaker-tags"><span class="speaker-tag">Philanthropy</span><span class="speaker-tag">Social Innovation</span><span class="speaker-tag">Scale</span></div>
       </div>
 
       <div class="speaker-row" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="speaker-row-top"><span class="speaker-name">Dr. Ahson Rabbani</span><span class="speaker-affil">ChildLife Foundation</span></div>
-        <div class="speaker-bio">CEO running 13 pediatric emergency rooms and 300+ telemedicine centers across Pakistan, treating 1.7M children annually — free of charge.</div>
+        <div class="speaker-row-top"><span class="speaker-name">Dr. Ahson Rabbani</span><span class="speaker-affil">ChildLife Foundation</span><span class="status-chip status-confirmed">Confirmed</span></div>
+        <div class="speaker-bio">Skoll Award winner. CEO running 13 pediatric emergency rooms and 300+ telemedicine centers across Pakistan, treating 1.7M children annually — free of charge.</div>
         <div class="speaker-tags"><span class="speaker-tag">Nonprofit Leader</span><span class="speaker-tag">Pediatric Health</span></div>
+      </div>
+
+      <div class="speaker-row" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
+        <div class="speaker-row-top"><span class="speaker-name">Monis Rahman</span><span class="speaker-affil">Rozee.pk</span><span class="status-chip status-to-invite">To Be Invited</span></div>
+        <div class="speaker-bio">Pioneered online recruitment in Pakistan with Rozee.pk, now serving 10M professionals and 65,000 employers; Forbes Top Asian Businessman.</div>
+        <div class="speaker-tags"><span class="speaker-tag">Entrepreneur</span><span class="speaker-tag">Tech</span><span class="speaker-tag">Future of Work</span></div>
+      </div>
+
+      <div class="speaker-row" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
+        <div class="speaker-row-top"><span class="speaker-name">Dr. Sania Nishtar</span><span class="speaker-affil">Ehsaas / Gavi</span><span class="status-chip status-to-invite">To Be Invited</span></div>
+        <div class="speaker-bio">Architect of Pakistan's Ehsaas social protection program, reaching 15M households; cardiologist, senator, and now CEO of Gavi.</div>
+        <div class="speaker-tags"><span class="speaker-tag">Policymaker</span><span class="speaker-tag">Public Health</span><span class="speaker-tag">Social Protection</span></div>
       </div>
 
     </div>
@@ -2088,33 +2166,9 @@
       <div class="speakers-col-header mulago-header">Global Practitioners</div>
 
       <div class="mulago-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="mulago-card-top"><span class="mulago-card-name">Andrew Youn</span><span class="mulago-card-affil">One Acre Fund</span></div>
-        <div class="mulago-card-topic">Founded One Acre Fund to deliver farm inputs and training to smallholder farmers, now serving over 1M families across Sub-Saharan Africa.</div>
-        <div class="mulago-card-tags"><span class="speaker-tag">Social Entrepreneur</span><span class="speaker-tag">Agriculture</span></div>
-      </div>
-
-      <div class="mulago-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="mulago-card-top"><span class="mulago-card-name">Ajaita Shah</span><span class="mulago-card-affil">Frontier Markets</span></div>
-        <div class="mulago-card-topic">Built rural last-mile distribution networks in India, turning village women into entrepreneurs delivering clean energy and essential goods.</div>
-        <div class="mulago-card-tags"><span class="speaker-tag">Social Entrepreneur</span><span class="speaker-tag">Last-Mile Distribution</span></div>
-      </div>
-
-      <div class="mulago-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="mulago-card-top"><span class="mulago-card-name">Patrick Awuah</span><span class="mulago-card-affil">Ashesi University</span></div>
-        <div class="mulago-card-topic">Left Microsoft to found Ashesi University in Ghana, redefining African higher education around ethics, leadership, and entrepreneurship.</div>
-        <div class="mulago-card-tags"><span class="speaker-tag">Social Entrepreneur</span><span class="speaker-tag">Higher Education</span></div>
-      </div>
-
-      <div class="mulago-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="mulago-card-top"><span class="mulago-card-name">Bright Simons</span><span class="mulago-card-affil">mPedigree</span></div>
-        <div class="mulago-card-topic">Invented a mobile drug authentication system that lets patients verify medicines via SMS, combating pharmaceutical counterfeiting across Africa and Asia.</div>
-        <div class="mulago-card-tags"><span class="speaker-tag">Innovator</span><span class="speaker-tag">Supply Chain</span><span class="speaker-tag">Public Health</span></div>
-      </div>
-
-      <div class="mulago-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="mulago-card-top"><span class="mulago-card-name">Noam Angrist</span><span class="mulago-card-affil">Youth Impact</span></div>
-        <div class="mulago-card-topic">MIT/Oxford Rhodes Scholar and co-founder of Youth Impact, scaling RCT-backed education programs to 100,000+ youth across 10 countries.</div>
-        <div class="mulago-card-tags"><span class="speaker-tag">Researcher</span><span class="speaker-tag">Education</span><span class="speaker-tag">Evidence-Based Practice</span></div>
+        <div class="mulago-card-top"><span class="mulago-card-name">Kevin Starr</span><span class="mulago-card-affil">Mulago Foundation</span><span class="status-chip status-confirmed">Confirmed</span></div>
+        <div class="mulago-card-topic">Founder of the Mulago Foundation — directs one of the most rigorous impact-first philanthropies in the world, funding scalable solutions to meet the basic needs of the very poor. Also leads Big Bang Philanthropy and the Rainer Arnhold Fellows Program.</div>
+        <div class="mulago-card-tags"><span class="speaker-tag">Philanthropy</span><span class="speaker-tag">Scale</span><span class="speaker-tag">Impact Investing</span></div>
       </div>
     </div>
   </div>
@@ -2124,115 +2178,52 @@
 <section id="funders">
   <div class="section-eyebrow fade-up visible">Capital Partners</div>
   <h2 class="section-title fade-up visible">The Funder Room</h2>
-  <p class="section-lead fade-up visible" style="color: rgba(10,22,40,0.82)">We are not building an audience. We are building a room. The funders who attend Demo Day are not there to observe — they are there because they are actively looking for Pakistan opportunities and have cleared their calendars to find them. This is not a conference. It is a deal room with mountains in the background.</p>
+  <p class="section-lead fade-up visible" style="color: rgba(10,22,40,0.82)">The funders who attend are not there to observe — they are actively looking for Pakistan opportunities and have cleared their calendars to find them.</p>
 
   <div class="funders-grid fade-up visible">
     <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Jeff Skoll</div>
-      <div class="funder-org">Skoll Foundation</div>
-      <a href="https://www.linkedin.com/in/jeffskoll" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Anita Zaidi</div>
-      <div class="funder-org">Gates Foundation</div>
-      <a href="https://www.linkedin.com/in/anita-zaidi" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Leah Hazard</div>
-      <div class="funder-org">Rippleworks Foundation</div>
-      <a href="https://www.linkedin.com/in/leahhazard" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Kamyla Marvi</div>
-      <div class="funder-org">British Asian Trust</div>
-      <a href="https://www.linkedin.com/in/kamyla-marvi-tapal-69a826a" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Liza Mueller</div>
-      <div class="funder-org">Echoing Green</div>
-      <a href="https://www.linkedin.com/in/lizamueller" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Lucien Chan</div>
-      <div class="funder-org">TED Audacious</div>
-      <a href="https://www.linkedin.com/in/lucien-chan-44a318" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Kalsoom Lakhani</div>
-      <div class="funder-org">I2I Fund</div>
-      <a href="https://www.linkedin.com/in/kalsoomlakhani" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Shanzeh Mahmood</div>
-      <div class="funder-org">LSE 100X</div>
-      <a href="https://www.linkedin.com/in/shanzeh-mahmood-93828b5a" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Philippe Bellordre</div>
-      <div class="funder-org">GSMA</div>
-      <a href="https://www.linkedin.com/in/philippebellordre" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Joe Exner</div>
-      <div class="funder-org">Steele Foundation</div>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Sabrina Malik</div>
-      <div class="funder-org">Sall Family Foundation</div>
-      <a href="https://www.linkedin.com/in/maliksabrina" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Sakina Zaidi</div>
-      <div class="funder-org">Pivotal Ventures</div>
-      <a href="https://www.linkedin.com/in/sakina-zaidi-0a611222" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Zoya Siddiqui</div>
-      <div class="funder-org">Acumen Fund</div>
-      <a href="https://www.linkedin.com/in/zoya-shabir-siddiqui-178a2582" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Ayesha Khan</div>
-      <div class="funder-org">Acumen Fund</div>
-      <a href="https://pk.linkedin.com/in/dr-ayesha-khan-4355a1148" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Shumaila Rifaqat</div>
-      <div class="funder-org">Karandaaz</div>
-      <a href="https://www.linkedin.com/in/shumaila-rifaqat-8b78a3120" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Dr. Nishat Riaz</div>
-      <div class="funder-org">Malala Fund Pakistan</div>
-      <a href="https://www.linkedin.com/in/nishat-riaz-mbe-21b0a224" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Paul Youn</div>
-      <div class="funder-org">One Acre Fund / D-Prize</div>
-      <a href="https://www.linkedin.com/in/paulyoun" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Kevin Starr</div>
+      <div class="funder-name">Kevin Starr <span class="status-chip status-confirmed">Confirmed</span></div>
       <div class="funder-org">Mulago Foundation</div>
       <a href="https://www.linkedin.com/in/kevin-starr-mulago" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Mubarik Imam</div>
+      <div class="funder-name">Mubarik Imam <span class="status-chip status-confirmed">Confirmed</span></div>
       <div class="funder-org">WhatsApp / Independent</div>
       <a href="https://www.linkedin.com/in/mubarik-imam-a914842" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Osman Rashid</div>
-      <div class="funder-org">Chegg / Khoj Resorts</div>
+      <div class="funder-name">Osman Rashid <span class="status-chip status-to-invite">To Be Invited</span></div>
+      <div class="funder-org">Chegg Co-founder / SOAR STEM Schools / Khoj Resorts</div>
       <a href="https://www.linkedin.com/in/osmanrashid" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-      <div class="funder-name">Mudassir Sheikha</div>
+      <div class="funder-name">Mudassir Sheikha <span class="status-chip status-to-invite">To Be Invited</span></div>
       <div class="funder-org">Careem / Uber</div>
       <a href="https://www.linkedin.com/in/mudassirsheikha" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
     </div>
+    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
+      <div class="funder-name">Joe Exner <span class="status-chip status-to-invite">To Be Invited</span></div>
+      <div class="funder-org">Steele Foundation</div>
+    </div>
+    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
+      <div class="funder-name">Ayesha Khan <span class="status-chip status-to-invite">To Be Invited</span></div>
+      <div class="funder-org">Acumen Fund</div>
+      <a href="https://pk.linkedin.com/in/dr-ayesha-khan-4355a1148" class="funder-linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
+      <div class="funder-name">Doug Galen <span class="status-chip status-to-invite">To Be Invited</span></div>
+      <div class="funder-org">RippleWorks</div>
+    </div>
+    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
+      <div class="funder-name">Ben Payne &amp; Becca <span class="status-chip status-to-invite">To Be Invited</span></div>
+      <div class="funder-org">Ex-Skoll / RippleWorks</div>
+    </div>
+    <div class="funder-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
+      <div class="funder-name">Rehan Jalil <span class="status-chip status-to-invite">To Be Invited</span></div>
+      <div class="funder-org">Securiti AI / Serial Founder</div>
+    </div>
   </div>
-  <p class="funders-note">* Final funder list subject to confirmation.</p>
+  <p class="funders-note">* Final funder list subject to confirmation. Status chips indicate current outreach progress.</p>
 </section>
 <!-- CTA -->
 <section id="cta">
@@ -2242,33 +2233,38 @@
   </div>
   <div class="cta-content fade-up visible">
     <h2 class="cta-title">Pakistan's next generation of scale organisations is being built right now. <em>Be in the room.</em></h2>
-    <p class="cta-subtitle">Founders arrive with proven models and the drive to go further. Funders arrive looking for exactly that. Summit Fellowship is where those two things meet — in one room, in one week, with no intermediaries.</p>
+    <p class="cta-subtitle">A growing series of gatherings — one mission: to put Pakistan's social innovators in the rooms that matter. Whether you're a founder, a funder, or someone who knows someone who should be here.</p>
 
     <div class="cta-cards">
       <div class="cta-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="cta-card-label">Founder Applications Close</div>
-        <div class="cta-card-value">March 15, 2026</div>
-        <div class="cta-card-sub">Decisions announced April 15</div>
+        <div class="cta-card-label">Oxford &nbsp;·&nbsp; March</div>
+        <div class="cta-card-value">Skoll World Forum</div>
+        <div class="cta-card-sub">Friends of Pakistan gathering + RippleWorks fireside</div>
       </div>
       <div class="cta-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px);">
-        <div class="cta-card-label">Fellowship Begins</div>
-        <div class="cta-card-value">June 6, 2026</div>
-        <div class="cta-card-sub">Skardu, Northern Pakistan</div>
+        <div class="cta-card-label">Vancouver &nbsp;·&nbsp; April</div>
+        <div class="cta-card-value">TED Conference</div>
+        <div class="cta-card-sub">Diaspora engagement + global thought leadership</div>
+      </div>
+      <div class="cta-card" style="transition: opacity 0.5s, transform 0.5s; opacity: 1; transform: translateY(0px); border-color: rgba(201,168,76,0.4);">
+        <div class="cta-card-label">Skardu &nbsp;·&nbsp; June 6–12</div>
+        <div class="cta-card-value">Summit Fellowship</div>
+        <div class="cta-card-sub">The flagship — 7-day scale intensive at the foot of the Karakoram</div>
       </div>
     </div>
 
-    <a href="mailto:hello@summitfellowship.pk" class="btn-primary" style="font-size:0.85rem; padding: 1rem 3rem;">Express Interest →</a>
+    <a href="mailto:hello@pakistancollective.org" class="btn-primary" style="font-size:0.85rem; padding: 1rem 3rem;">Get in Touch →</a>
 
     <p class="cta-footer" style="margin-top:2rem;">
-      Organized by <strong style="color:var(--gold)">Taleemabad</strong> &nbsp;·&nbsp; Framework by <strong style="color:var(--gold)">Mulago Foundation</strong> &nbsp;·&nbsp; Led by <strong style="color:var(--gold)">Kevin Starr</strong>
+      If you know someone who should be in the room, please share this with them.
     </p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Summit Fellowship 2026</div>
-  <div class="footer-text">June 6–12, 2026 &nbsp;·&nbsp; Northern Pakistan &nbsp;·&nbsp; <a href="mailto:hello@summitfellowship.pk" style="color:var(--gold); text-decoration:none;">hello@summitfellowship.pk</a></div>
+  <div class="footer-logo">Pakistan Collective 2026</div>
+  <div class="footer-text">Oxford &nbsp;·&nbsp; Vancouver &nbsp;·&nbsp; Skardu &nbsp;·&nbsp; <a href="mailto:hello@pakistancollective.org" style="color:var(--gold); text-decoration:none;">hello@pakistancollective.org</a></div>
 </footer>
 
 <script>
